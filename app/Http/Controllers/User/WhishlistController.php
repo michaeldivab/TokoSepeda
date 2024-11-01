@@ -31,7 +31,7 @@ class WhishlistController extends Controller
 
     public function showAll(Request $request): View
     {   
-        $viewData['whislist'] = Whishlist::with('bike')->where('userid', Auth::id())->paginate(12);
+        $viewData['whislist'] = Whishlist::with('bike')->where('userid', Auth::id())->get();
 
         $cartBikeData = $request->session()->get('cart_bike_data');
         $viewData['cartCount'] = 0;
@@ -48,7 +48,7 @@ class WhishlistController extends Controller
         }
         $viewData['cartBikeData'] = $cartBikeData;
 
-        return view('user.whislist.showAll')->with('viewData', $viewData);
+        return view('user.whislist.show')->with('viewData', $viewData);
     }
 
     public function remove(Request $request, $id): RedirectResponse

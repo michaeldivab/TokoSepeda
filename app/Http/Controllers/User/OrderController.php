@@ -114,7 +114,7 @@ class OrderController extends Controller
         $order = Order::where('id', $id)->first();
 
         if ($order->payment_image !== null) {
-            Storage::disk('public')->delete($bike->img);
+            Storage::disk('public')->delete($order->payment_image);
         }
 
         $filePath = Storage::disk('public')->put('images/product/transfers', request()->file('file'));

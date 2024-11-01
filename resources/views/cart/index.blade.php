@@ -146,7 +146,7 @@
 
                         @guest
                             <div class="col-xs-12 col-sm-6 col-md-6 text-right pull-right">
-                                <a class="btn btn-default" href="#" title="please login to proceed" onclick="return false;">Login To Checkout</a>
+                                <a data-toggle="modal" data-target=".login-modal-lg" type="button" class="btn btn-default" title="please login to proceed">Login To Checkout</a>
                             </div>
                         @else 
                             @if($viewData["cartBike"])

@@ -45,11 +45,11 @@
                         <div class="col-xs-12  col-sm-12  col-md-12">
                             <div class="shop-options">
                                 <!-- .product-options end -->
-                                <div class="product-view-mode text-right pull-none-xs">
+                                {{-- <div class="product-view-mode text-right pull-none-xs">
                                     <span>view as:</span>
                                     <a class="active" href="#"><i class="fa fa-th-large"></i></a>
                                     <a href="#"><i class="fa fa-th-list"></i></a>
-                                </div>
+                                </div> --}}
                                 <!-- .product-num end -->
                             </div>
                             <!-- .shop-options end -->
@@ -103,12 +103,6 @@
                         @endforeach
                     </div>
                     <!-- .row end -->
-                    <div class="row">
-                        <div class="col-xs-12 col-sm-12 col-md-12">
-                            {{$viewData["whislist"]->links()}}
-                        </div>
-                        <!-- .col-md-12 end -->
-                    </div>
                 </div>
                 <!-- .col-md-9 end -->
             </div>

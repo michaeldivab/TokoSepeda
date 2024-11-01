@@ -82,9 +82,7 @@
                                                     <a id="update-btn-{{$order->getId()}}" class="btn btn-info btn-md">
                                                       <i class="fas fa-pencil-square fa-md"></i>
                                                     </a>
-                                                    <a id="delete-btn-{{$order->getId()}}" class="btn btn-danger btn-md">
-                                                      <i class="fas fa-trash fa-md"></i>
-                                                    </a>
+                                                    
             
                                                     <form id="delete-form-{{$order->getId()}}" action="{{ route('admin.order.remove', ['id'=>$order->getId()])}}" method="post">
                                                       @csrf
@@ -129,7 +127,7 @@
                   </div>
                   <div class="form-group">
                     <label for="note" class="col-form-label">Note:</label>
-                    <textarea class="form-control" id="note" name="note" rows="5" required=""></textarea>
+                    <textarea class="form-control" id="note" name="notes" rows="5" required=""></textarea>
                   </div>
                   <div class="form-group">
                     <label for="resi" class="col-form-label">No. Resi:</label>

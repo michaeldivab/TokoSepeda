@@ -46,13 +46,16 @@
 		<div class="modal-dialog">
 			<div class="modal-content">
 				<div class="modal-body">
+					<button type="button" class="close text-default" data-dismiss="modal" aria-label="Close">
+			          <span aria-hidden="true">&times;</span>
+			        </button>
 					<p>Welcome Back</p>
 					<h6>Login Area</h6>
 					<div class="sign-form">
 						<form class="mb-0" method="POST" action="{{ route('login') }}">
 							@csrf
 							<div class="form-group">
-								<input style="text-transform: lowercase;" id="email" type="email" class="form-control @error('email') is-invalid @enderror" name="email" value="{{ old('email') }}" required autocomplete="email" autofocus placeholder="Email">
+								<input pattern="[^@\s]+@[^@\s]+\.[^@\s]+" style="text-transform: lowercase;" id="email" type="text" class="form-control @error('email') is-invalid @enderror" name="email" value="{{ old('email') }}" required autocomplete="email" autofocus placeholder="Email">
 							</div>
 							<div class="form-group">
 								<input style="text-transform: lowercase;" id="password" type="password" class="form-control @error('password') is-invalid @enderror" name="password" required autocomplete="current-password" placeholder="Password">
@@ -71,7 +74,7 @@
                             @endif
                             <br>
 							<button type="submit" class="btn btn-primary btn-block">Sign In</button>
-							<button type="button" class="btn btn-primary btn-block" data-dismiss="modal">Close</button>
+							{{-- <button type="button" class="btn btn-primary btn-block" data-dismiss="modal">Close</button> --}}
 						</form>
 					</div>
 				</div>
@@ -84,6 +87,9 @@
 		<div class="modal-dialog">
 			<div class="modal-content">
 				<div class="modal-body">
+					<button type="button" class="close text-default" data-dismiss="modal" aria-label="Close">
+			          <span aria-hidden="true">&times;</span>
+			        </button>
 					<p>Hello</p>
 					<h6>Register Form</h6>
 					<div class="register-form">
@@ -94,7 +100,7 @@
 								<input style="text-transform: lowercase;" id="name" type="text" class="form-control @error('name') is-invalid @enderror" name="name" value="{{ old('name') }}" required autocomplete="name" autofocus placeholder="Name">
 							</div>
 							<div class="form-group">
-								<input style="text-transform: lowercase;" id="email" type="email" class="form-control @error('email') is-invalid @enderror" name="email" value="{{ old('email') }}" required autocomplete="email" placeholder="Email">
+								<input pattern="[^@\s]+@[^@\s]+\.[^@\s]+" style="text-transform: lowercase;" id="email" type="text" class="form-control @error('email') is-invalid @enderror" name="email" value="{{ old('email') }}" required autocomplete="email" placeholder="Email">
 							</div>
 							<div class="form-group">
 								<input style="text-transform: lowercase;" id="address" type="text" class="form-control @error('address') is-invalid @enderror" name="address" value="{{ old('address') }}" required autocomplete="address" autofocus placeholder="Address">
@@ -106,7 +112,7 @@
 								<input style="text-transform: lowercase;" id="password-confirm" type="password" class="form-control" name="password_confirmation" required autocomplete="new-password" placeholder="Confirm Password" minlength="8">
 							</div>
 							<button type="submit" class="btn btn-primary btn-block mt-30">Register</button>
-							<button type="button" class="btn btn-primary btn-block" data-dismiss="modal">Close</button>
+							{{-- <button type="button" class="btn btn-primary btn-block" data-dismiss="modal">Close</button> --}}
 						</form>
 					</div>
 				</div>
@@ -136,7 +142,7 @@
 			<div class="collapse navbar-collapse pull-right" id="header-navbar-collapse-1">
 				<ul class="nav navbar-nav navbar-left">
 					<li>
-						<a href="{{url('/')}}">Home</a>
+						<a href="{{url('/home')}}">Home</a>
 					</li>
 					<!-- li end -->
 					<li>
@@ -201,7 +207,7 @@
 								@if(isset($viewData["cartBike"]))
 								@foreach($viewData["cartBike"] as $key => $bike)
 								<li>
-									<img class="img-responsive" src="{{ asset('public/storage/'.$bike->getImage()) }}" alt="product"/>
+									<img class="img-responsive" src="{{ Storage::url($bike->getImage()) }}" alt="product"/>
 									<div class="product-meta">
 										<h5 class="product-title">{{$bike->name}}</h5>
 										<p class="product-price">Price: Rp. {{ number_format($bike->getPrice(),0,',','.') }} </p>

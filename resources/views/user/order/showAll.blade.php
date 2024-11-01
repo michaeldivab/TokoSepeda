@@ -183,7 +183,7 @@
                 <div class="modal-content">
                     <div class="modal-header">
                         <h5 class="modal-title" id="exampleModalLabel">Update Payment Bill #{{$order->getId()}}</h5>
-                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <button type="button" class="close text-default" data-dismiss="modal" aria-label="Close">
                           <span aria-hidden="true">&times;</span>
                         </button>
                      </div>
@@ -199,7 +199,7 @@
                                 </div>
                                 
                                 <button type="submit" class="btn btn-primary btn-block mt-30">Submit</button>
-                                <button type="button" class="btn btn-secondary btn-block mt-30" data-dismiss="modal">Close</button>
+                                {{-- <button type="button" class="btn btn-secondary btn-block mt-30" data-dismiss="modal">Close</button> --}}
                                 
                             </form>
                         </div>

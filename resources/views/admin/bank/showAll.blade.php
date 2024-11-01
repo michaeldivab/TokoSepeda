@@ -100,15 +100,15 @@
             
                   <div class="form-group">
                     <label for="bank_username" class="col-form-label">Bank Username:</label>
-                    <input type="text" class="form-control" id="bank_username" name="bank_username" required></input>
+                    <input pattern="^[a-zA-Z]+" oninvalid="setCustomValidity('Please enter on alphabets only. ')" type="text" class="form-control" id="bank_username" name="bank_username" required></input>
                   </div>
                   <div class="form-group">
                     <label for="bank_name" class="col-form-label">Bank Name:</label>
-                    <input type="text" class="form-control" id="bank_name" name="bank_name" required></input>
+                    <input pattern="^[a-zA-Z]+" oninvalid="setCustomValidity('Please enter on alphabets only. ')" type="text" class="form-control" id="bank_name" name="bank_name" required></input>
                   </div>
                   <div class="form-group">
                     <label for="bank_no" class="col-form-label">Bank Id:</label>
-                    <input type="text" class="form-control" id="bank_no" name="bank_no" required></input>
+                    <input type="number" class="form-control" id="bank_no" name="bank_no" required></input>
                   </div>
 
                     <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
@@ -139,15 +139,15 @@
             
                   <div class="form-group">
                     <label for="bank_username" class="col-form-label">Bank Username:</label>
-                    <input value="{{$bank->bank_username}}" type="text" class="form-control" id="bank_username" name="bank_username" required></input>
+                    <input pattern="^[a-zA-Z]+" oninvalid="setCustomValidity('Please enter on alphabets only. ')" value="{{$bank->bank_username}}" type="text" class="form-control" id="bank_username" name="bank_username" required></input>
                   </div>
                   <div class="form-group">
                     <label for="bank_name" class="col-form-label">Bank Name:</label>
-                    <input value="{{$bank->bank_name}}" type="text" class="form-control" id="bank_name" name="bank_name" required></input>
+                    <input pattern="^[a-zA-Z]+" oninvalid="setCustomValidity('Please enter on alphabets only. ')" value="{{$bank->bank_name}}" type="text" class="form-control" id="bank_name" name="bank_name" required></input>
                   </div>
                   <div class="form-group">
                     <label for="bank_no" class="col-form-label">Bank Id:</label>
-                    <input value="{{$bank->bank_no}}" type="text" class="form-control" id="bank_no" name="bank_no" required></input>
+                    <input value="{{$bank->bank_no}}" type="number" class="form-control" id="bank_no" name="bank_no" required></input>
                   </div>
 
                     <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>

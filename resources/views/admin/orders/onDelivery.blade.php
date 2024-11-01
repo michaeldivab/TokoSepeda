@@ -134,7 +134,7 @@
                     </div>
                     <div class="form-group">
                         <label for="note" class="col-form-label">Note:</label>
-                        <textarea value="{{$order->payment_notes}}" class="form-control" id="note" name="note" rows="5" required=""></textarea>
+                        <textarea value="{{$order->payment_notes}}" class="form-control" id="note" name="notes" rows="5" required=""></textarea>
                     </div>
 
                     <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
