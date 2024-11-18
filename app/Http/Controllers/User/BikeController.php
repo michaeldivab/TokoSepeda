@@ -43,7 +43,7 @@ class BikeController extends Controller
             $viewData['idbike'] = 0;
         }
 
-        $viewData['bikes'] = $viewData['bikes']->paginate(16);
+        $viewData['bikes'] = $viewData['bikes']->orderBy('ordercount', 'desc')->orderBy('stock', 'desc')->paginate(16);
 
         $cartBikeData = $request->session()->get('cart_bike_data');
         $viewData['cartCount'] = 0;
@@ -103,7 +103,7 @@ class BikeController extends Controller
     public function clear_search_products(Request $request)
     {   
         $viewData['idbike'] = 0;
-        $viewData['bikes'] = Bike::orderBy('created_at', 'desc')->paginate(16);
+        $viewData['bikes'] = Bike::orderBy('ordercount', 'desc')->orderBy('stock', 'desc')->paginate(16);
 
         return view('user.bike.searchProduct',compact('viewData'))->render();
     }

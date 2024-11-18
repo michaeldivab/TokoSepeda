@@ -65,9 +65,7 @@
                                 <img src="{{ Storage::url($bike->bike->getImage()) }}" alt="Product"/>
                                 <div class="product-hover">
                                     <div class="product-action">
-                                        @if($bike->stock == 0)
-                                        <a class="btn btn-primary" style="width: 50px;"> <i class="fa fa-exclamation-circle" aria-hidden="true" title="out of stock"></i></a>
-                                        @else
+                                        @if($bike->bike->stock >= 1)
                                         <a class="btn btn-primary" style="width: 50px;" href="{{ route('cart.add', ['id'=> $bike->bike->getId() ]) }}"> <i class="fa fa-shopping-cart" aria-hidden="true" title="Add To Cart"></i></a>
                                         @endif
                                         @guest
@@ -82,7 +80,7 @@
                             <!-- .product-img end -->
                             <div class="product-bio">
                                 <div class="prodcut-cat">
-                                    <a href="{{ route('user.bike.show', ['id'=>$bike->bike->getId()]) }}">{{ $bike->bike->getType() }}</a>
+                                    <a href="{{ route('user.bike.show', ['id'=>$bike->bike->getId()]) }}">{{ $bike->bike->getType() }} - {{ $bike->bike->getBrand() }} - {{ $bike->bike->stock }} stock</a>
                                 </div>
                                 <!-- .product-cat end -->
                                 <div class="prodcut-title">

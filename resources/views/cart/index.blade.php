@@ -68,7 +68,7 @@
                                 @foreach($viewData["cartBike"] as $key => $bike)
                                 <tr class="cart-product">
                                     <td class="cart-product-item">
-                                        <img src="{{ asset('public/storage/'.$bike->getImage()) }}" alt="product"/>
+                                        <img src="{{ Storage::url($bike->bike->getImage()) }}" alt="product"/>
                                     </td>
                                     <td class="cart-product-item">
                                         {{$bike->getName()}}

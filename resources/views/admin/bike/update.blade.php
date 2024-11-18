@@ -29,19 +29,19 @@
          <input id="name" type="text" name="name" class="form-control" value="{{$viewData['bike']->getName()}}" required />
 
          <label for="stock" class="form_label">Stock</label>
-         <input id="stock" type="number" name="stock" class="form-control" value="{{$viewData['bike']->getStock()}}"
+         <input oninput="this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*?)\..*/g, '$1');" id="stock" type="number" min="0" name="stock" class="form-control" value="{{$viewData['bike']->getStock()}}"
             required />
 
          <label for="price" class="form_label">Price</label>
-         <input id="price" type="number" name="price" class="form-control" value="{{$viewData['bike']->getPrice()}}"
+         <input oninput="this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*?)\..*/g, '$1');" id="price" type="number" min="0" name="price" class="form-control" value="{{$viewData['bike']->getPrice()}}"
             required />
 
          <label for="discount" class="form_label">Discount (%)</label>
-         <input id="discount" type="number" name="discount" class="form-control" value="{{$viewData['bike']->discount}}"
+         <input oninput="this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*?)\..*/g, '$1');" id="discount" type="number" min="0" max="100" name="discount" class="form-control" value="{{$viewData['bike']->discount}}"
             required />
 
          <label for="weight" class="form_label">Weight</label>
-         <input id="weight" type="text" name="weight" class="form-control" value="{{$viewData['bike']->weight}}" required />
+         <input oninput="this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*?)\..*/g, '$1');" id="weight" type="number" min="0" name="weight" class="form-control" value="{{$viewData['bike']->weight}}" required />
 
          <div id="form_input_container" style="display: none;">
             <label for="share" class="form_label">{{__('messages.enter_bike_share')}} </label>
@@ -78,7 +78,7 @@
          </select>
 
          <label for="color" class="form_label">Color</label>
-         <textarea id="color" name="color" class="form-control" rows="2" value="{{ old('color') }}"
+         <textarea onkeydown="return /[a-z]/i.test(event.key)" id="color" name="color" class="form-control" rows="2" value="{{ old('color') }}"
             placeholder="Warna Sepeda" required>{{ $viewData['bike']->color }}</textarea>
 
          @if ($viewData["bike"]->getUser()->getRole() === 'user')

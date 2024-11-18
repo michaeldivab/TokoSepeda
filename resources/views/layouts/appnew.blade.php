@@ -36,7 +36,7 @@
     @livewireStyles
 <!-- Document Title
     ============================================= -->
-<title>Autoshop</title>
+<title>Bike Shop</title>
 </head>
 <body>
 <!-- Document Wrapper

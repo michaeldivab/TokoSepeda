@@ -25,14 +25,14 @@
          @csrf
          <input type="text" name="name" class="form-control m-2" placeholder="{{ __('messages.enter_bike_name') }}"
             value="{{ old('name') }}" required />
-         <input type="number" name="stock" class="form-control m-2" placeholder="{{ __('messages.enter_bike_stock') }}"
+         <input oninput="this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*?)\..*/g, '$1');" type="number" min="0" name="stock" class="form-control m-2" placeholder="{{ __('messages.enter_bike_stock') }}"
             value="{{ old('stock') }}" required />
-         <input type="number" name="price" class="form-control m-2" placeholder="{{ __('messages.enter_bike_price') }}"
+         <input oninput="this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*?)\..*/g, '$1');" type="number" min="0" name="price" class="form-control m-2" placeholder="{{ __('messages.enter_bike_price') }}"
             value="{{ old('stock') }}" required />
-            <input type="number" name="discount" class="form-control m-2" placeholder="Discount (%)"
-            value="{{ old('stock') }}" required />
-            <input type="text" name="weight" class="form-control m-2" placeholder="berat sepeda"
-            value="{{ old('weight') }}" required />
+         <input oninput="this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*?)\..*/g, '$1');" type="number" min="0" max="100" name="discount" class="form-control m-2" placeholder="Discount (%)"
+         value="{{ old('stock') }}" required />
+         <input oninput="this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*?)\..*/g, '$1');" type="number" min="0" name="weight" class="form-control m-2" placeholder="berat sepeda"
+         value="{{ old('weight') }}" required />
          <div id="form_input_container" style="display: none;">
             <label for="share" class="form_label">{{__('messages.enter_bike_share')}} </label>
             <input type="hidden" name="share" value="0"><input type="checkbox" class="bike_create_check"
@@ -57,7 +57,7 @@
             <option value="Thrill">Thrill</option>
             <option value="Pacific">Pacific</option>
          </select>
-         <textarea name="color" class="form-control m-2" rows="2" value="{{ old('color') }}"
+         <textarea onkeydown="return /[a-z]/i.test(event.key)" name="color" class="form-control m-2" rows="2" value="{{ old('color') }}"
             placeholder="Warna Sepeda" required></textarea>
          <div>
             <label for="image" class="form_label">{{__('messages.enter_bike_image')}}</label>

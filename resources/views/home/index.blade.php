@@ -179,9 +179,7 @@
 						<img src="{{ Storage::url($bike->getImage()) }}" alt="Product"/>
 						<div class="product-hover">
 							<div class="product-action">
-                                @if($bike->stock == 0)
-                                <a class="btn btn-primary" style="width: 50px;"> <i class="fa fa-exclamation-circle" aria-hidden="true" title="out of stock"></i></a>
-                                @else
+                                @if($bike->stock >= 1)
 								<a class="btn btn-primary" style="width: 50px;" href="{{ route('cart.add', ['id'=> $bike->getId() ]) }}"> <i class="fa fa-shopping-cart" aria-hidden="true" title="Add To Cart"></i></a>
 								@endif
                                 @guest
@@ -257,11 +255,9 @@
 						<img src="{{ Storage::url($bike->getImage()) }}" alt="Product"/>
 						<div class="product-hover">
 							<div class="product-action">
-								@if($bike->stock == 0)
+								@if($bike->stock >= 1)
                                 <a class="btn btn-primary" style="width: 50px;"> <i class="fa fa-exclamation-circle" aria-hidden="true" title="out of stock"></i></a>
-                                @else
-								<a class="btn btn-primary" style="width: 50px;" href="{{ route('cart.add', ['id'=> $bike->getId() ]) }}"> <i class="fa fa-shopping-cart" aria-hidden="true" title="Add To Cart"></i></a>
-								@endif
+                                @endif
                                 @guest
                                 @else
 	                                @if(App\Models\Whishlist::where('userid', Auth::id())->where('bikeid', $bike->getId())->exists())
@@ -335,11 +331,9 @@
 						<img src="{{ Storage::url($bike->getImage()) }}" alt="Product"/>
 						<div class="product-hover">
 							<div class="product-action">
-								@if($bike->stock == 0)
+								@if($bike->stock >= 1)
                                 <a class="btn btn-primary" style="width: 50px;"> <i class="fa fa-exclamation-circle" aria-hidden="true" title="out of stock"></i></a>
-                                @else
-								<a class="btn btn-primary" style="width: 50px;" href="{{ route('cart.add', ['id'=> $bike->getId() ]) }}"> <i class="fa fa-eye" aria-hidden="true" title="Add To Cart"></i></a>
-								@endif
+                                @endif
                                 @guest
                                 @else
 	                                @if(App\Models\Whishlist::where('userid', Auth::id())->where('bikeid', $bike->getId())->exists())

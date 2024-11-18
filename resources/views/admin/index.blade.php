@@ -112,7 +112,7 @@ card-img-right">
                                 <i class="feather icon-credit-card text-success font-medium-5"></i>
                             </div>
                         </div>
-                        <h2 class="text-bold-700 mt-1 mb-25">0</h2>
+                        <h2 class="text-bold-700 mt-1 mb-25">{{count($data['payments'])}}</h2>
                         <p class="mb-0">Payment</p>
                     </div>
                     <div class="card-content">
@@ -130,7 +130,7 @@ card-img-right">
                                 <i class="fa fa-university text-success font-medium-5"></i>
                             </div>
                         </div>
-                        <h2 class="text-bold-700 mt-1 mb-25">0</h2>
+                        <h2 class="text-bold-700 mt-1 mb-25">{{count($data['banks'])}}</h2>
                         <p class="mb-0">Bank</p>
                     </div>
                     <div class="card-content">

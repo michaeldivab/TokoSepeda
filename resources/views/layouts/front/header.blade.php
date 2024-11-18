@@ -27,7 +27,7 @@
         </div>
     </div>
 
-	<div class="top-bar">
+	{{-- <div class="top-bar">
 		<div class="container">
 			<div class="row">
 				<div class="col-xs-12 col-sm-6 col-md-5">
@@ -36,11 +36,11 @@
 						<li><span>Email :</span> admin@example.com</li>
 					</ul>
 				</div>
-			</div>
+			</div> --}}
 			<!-- .row end -->
-		</div>
+		{{-- </div> --}}
 		<!-- .container end -->
-	</div>
+	{{-- </div> --}}
 
 	<div class="modal model-sign fade login-modal-lg" tabindex="-1" role="dialog">
 		<div class="modal-dialog">
@@ -97,7 +97,7 @@
 							@csrf
 
 							<div class="form-group">
-								<input style="text-transform: lowercase;" id="name" type="text" class="form-control @error('name') is-invalid @enderror" name="name" value="{{ old('name') }}" required autocomplete="name" autofocus placeholder="Name">
+								<input onkeydown="return /[a-z]/i.test(event.key)" style="text-transform: lowercase;" id="name" type="text" class="form-control @error('name') is-invalid @enderror" name="name" value="{{ old('name') }}" required autocomplete="name" autofocus placeholder="Name">
 							</div>
 							<div class="form-group">
 								<input pattern="[^@\s]+@[^@\s]+\.[^@\s]+" style="text-transform: lowercase;" id="email" type="text" class="form-control @error('email') is-invalid @enderror" name="email" value="{{ old('email') }}" required autocomplete="email" placeholder="Email">
@@ -142,7 +142,7 @@
 			<div class="collapse navbar-collapse pull-right" id="header-navbar-collapse-1">
 				<ul class="nav navbar-nav navbar-left">
 					<li>
-						<a href="{{url('/home')}}">Home</a>
+						<a href="{{url('/')}}">Home</a>
 					</li>
 					<!-- li end -->
 					<li>
