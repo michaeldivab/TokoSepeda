@@ -112,7 +112,7 @@
         $("#delete-btn-{{$order->getId()}}").on('click', function (e) {
             e.preventDefault();
             Swal.fire({
-                title: 'Delete Bike',
+                title: 'Delete Order',
                 text: "Are You Sure Want Delete This Data, Order id {{ $order->getId() }} ?",
                 icon: 'warning',
                 showCancelButton: true,

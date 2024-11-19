@@ -68,7 +68,7 @@ card-img-right">
 
             </div>
 
-            <div class="col-lg-4 col-md-12 col-sm-12">
+            {{-- <div class="col-lg-4 col-md-12 col-sm-12">
                 <div class="card">
                     <div class="card-header d-flex flex-column align-items-start pb-0">
                         <div class="avatar bg-rgba-success p-50 m-0">
@@ -84,7 +84,7 @@ card-img-right">
                     </div>
                 </div>
 
-            </div>
+            </div> --}}
 
             <div class="col-lg-4 col-md-12 col-sm-12">
                 <div class="card">

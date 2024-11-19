@@ -25,16 +25,18 @@
         </div>
         <!-- .product-img end -->
         <div class="product-bio">
-            <div class="prodcut-cat" style="height: 30px;">
-                <a href="{{ route('user.bike.show', ['id'=>$bike->getId()]) }}">{{ $bike->getType() }} - {{ $bike->getBrand() }} - {{ $bike->stock }} stock</a>
+            <div class="prodcut-cat" style="height: 35px;">
+                <a style="font-size: 10.7px;" href="{{ route('user.bike.show', ['id'=>$bike->getId()]) }}">{{ $bike->getType() }} - {{ $bike->getBrand() }} - {{ $bike->stock }} stock</a>
             </div>
             <!-- .product-cat end -->
-            <div class="prodcut-title" style="height: 40px;">
-                <a style="font-size: 15px; font-weight: bold; text-transform: uppercase;" href="{{ route('user.bike.show', ['id'=>$bike->getId()]) }}">{{ Str::limit($bike->getName(), 30) }}</a>
+            <div class="prodcut-title" style="height: 30px;">
+                <p style="font-size: 13.2px; text-transform: uppercase; font-weight: bold; line-height: 14px;">
+                    <a href="{{ route('user.bike.show', ['id'=>$bike->getId()]) }}">{{ Str::limit($bike->getName(), 30) }}</a>
+                </p>
             </div>
             <!-- .product-title end -->
-            <div class="product-price" style="font-size: 18px; font-weight: bold;">
-                <span class="symbole">Rp. </span><span>{{ number_format($bike->getPrice(),0,',','.') }}</span>
+            <div class="product-price" style="height: 30px;">
+                <span style="font-size: 13.7px;" class="symbole">Rp. {{ number_format($bike->getPrice(),0,',','.') }}</span>
             </div>
             <!-- .product-price end -->
             

@@ -70,7 +70,7 @@
                                         @endif
                                         @guest
                                         @else
-                                        <a class="btn btn-primary" style="width: 50px;" href="{{ route('user.whishlist.remove', ['id'=>$bike->bike->getId()]) }}"><i class="fa fa-trash" aria-hidden="true" title="Remove From Wishlist"></i></a>
+                                        <a class="btn btn-primary" style="width: 50px;" href="{{ route('user.whishlist.remove', ['id'=>$bike->id]) }}"><i class="fa fa-trash" aria-hidden="true" title="Remove From Wishlist"></i></a>
                                         @endguest
                                         <a class="btn btn-primary" style="width: 50px;" href="{{ route('user.bike.show', ['id'=>$bike->bike->getId()]) }}"><i class="fa fa-eye" aria-hidden="true" title="View Detail"></i></a>
                                     </div>

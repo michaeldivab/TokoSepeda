@@ -21,8 +21,8 @@
                 </li>
                 <li class=" nav-item {{ request()->routeIs('admin.bike.*') ? 'active' : '' }}"><a href="{{ route('admin.bike.showAll') }}"><i class="fa fa-bicycle"></i><span class="menu-title" data-i18n="Merchant">Bikes</span></a>
                 </li>
-                <li class=" nav-item {{ request()->routeIs('admin.part.*') ? 'active' : '' }}"><a href="{{ route('admin.part.showall') }}"><i class="feather icon-list"></i><span class="menu-title" data-i18n="Merchant">Bike Parts</span></a>
-                </li>
+                {{-- <li class=" nav-item {{ request()->routeIs('admin.part.*') ? 'active' : '' }}"><a href="{{ route('admin.part.showall') }}"><i class="feather icon-list"></i><span class="menu-title" data-i18n="Merchant">Bike Parts</span></a>
+                </li> --}}
 
                 <li class=" nav-item {{ request()->is('admin/order/unpayment') ? 'active' : '' }}"><a href="{{ route('admin.order.showUnpayment') }}"><i class="fa fa fa-spinner"></i><span class="menu-title" data-i18n="Merchant">Order (unpayment)</span></a>
                 </li>

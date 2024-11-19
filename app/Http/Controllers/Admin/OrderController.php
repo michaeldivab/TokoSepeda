@@ -124,15 +124,16 @@ class OrderController extends Controller
             return redirect()->back();
         }
 
-        $bikeItems = Item::where('order_id', $id)->get();
+        $bikeItems = Item::where('order_id', $id);
 
-        foreach ($bikeItems as $key => $value) {
+        foreach ($bikeItems->get() as $key => $value) {
             $bike = Bike::where('id', $value->bike_id)->first();
 
             $bike->ordercount = $bike->ordercount + $value->quantity;
             $bike->save();
         }
         
+        $bikeItems->delete();
         $order->delete();
 
         return redirect()->back();
