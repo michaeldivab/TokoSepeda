@@ -104,9 +104,9 @@
 @endsection
 
 @section('js')
-
     @foreach ($viewData["bikes"] as $bike)
     <script>
+    
         $("#delete-btn-{{$bike->getId()}}").on('click', function (e) {
             e.preventDefault();
             Swal.fire({
@@ -118,16 +118,16 @@
                 cancelButtonColor: '#d33',
                 confirmButtonText: 'Yes!'
             }).then((result) => {
-                if(result) {
+                if(result.value) {
                     $("#delete-form-{{$bike->getId()}}").submit();
                 }
             }
         )
             ;
         });
+    
     </script>
     @endforeach
-
     <script>
         $('.datatable').DataTable();
     </script>

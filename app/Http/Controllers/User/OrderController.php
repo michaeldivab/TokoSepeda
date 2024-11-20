@@ -120,6 +120,7 @@ class OrderController extends Controller
         $filePath = Storage::disk('public')->put('images/product/transfers', request()->file('file'));
         $order['payment_image'] = $filePath;
         $order['payment_status'] = 1;
+        $order['payment_date'] = date('Y-m-d');
         $order->save();
 
         $bikeItems = Item::where('order_id', $id)->get();

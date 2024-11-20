@@ -99,7 +99,7 @@
                 cancelButtonColor: '#d33',
                 confirmButtonText: 'Yes!'
             }).then((result) => {
-                if(result) {
+                if(result.value) {
                     $("#delete-form-{{$user->id}}").submit();
                 }
             }

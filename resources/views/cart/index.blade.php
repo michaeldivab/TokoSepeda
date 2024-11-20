@@ -277,12 +277,18 @@
                     `);
                     $.each(response, function(i, val){
                         var value = val.service+'-'+val.cost[0].value;
+
+                        var costval = val.cost[0].value;
+                        var reverse = costval.toString().split('').reverse().join(''),
+                        ribuan  = reverse.match(/\d{1,3}/g);
+                        ribuan  = ribuan.join('.').split('').reverse().join('');
+
                         $('#resultBody').append(`
                             <tr>
                                 <td><input type="radio"  id="option${i}" name="ongkir" value="${value}" required></td>
                                 <td>${val.service}</td>
                                 <td>${val.description}</td>
-                                <td>${val.cost[0].value}</td>
+                                <td>${ribuan}</td>
                                 <td>${val.cost[0].etd}</td>
                             </tr>
                         `);

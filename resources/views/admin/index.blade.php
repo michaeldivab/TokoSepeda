@@ -41,7 +41,7 @@ card-img-right">
                             </div>
                         </div>
                         <h2 class="text-bold-700 mt-1 mb-25">{{count($data['users'])}}</h2>
-                        <p class="mb-0">Users</p>
+                        <a href="{{route('admin.user.showAll')}}" style="text-decoration: none;"><p class="mb-0">Users</p></a>
                     </div>
                     <div class="card-content">
                         <div id="subscribe-gain-chart"></div>
@@ -59,7 +59,7 @@ card-img-right">
                             </div>
                         </div>
                         <h2 class="text-bold-700 mt-1 mb-25">{{count($data['bikes'])}}</h2>
-                        <p class="mb-0">Bikes</p>
+                        <a href="{{ route('admin.bike.showAll') }}" style="text-decoration: none;"><p class="mb-0">Bikes</p></a>
                     </div>
                     <div class="card-content">
                         <div id="subscribe-gain-chart"></div>
@@ -95,7 +95,7 @@ card-img-right">
                             </div>
                         </div>
                         <h2 class="text-bold-700 mt-1 mb-25">{{count($data['orders'])}}</h2>
-                        <p class="mb-0">Orders</p>
+                        <a href="{{ route('admin.order.showUnpayment') }}" style="text-decoration: none;"><p class="mb-0">Orders</p></a>
                     </div>
                     <div class="card-content">
                         <div id="subscribe-gain-chart"></div>
@@ -113,7 +113,7 @@ card-img-right">
                             </div>
                         </div>
                         <h2 class="text-bold-700 mt-1 mb-25">{{count($data['payments'])}}</h2>
-                        <p class="mb-0">Payment</p>
+                        <a href="{{ route('admin.order.showPayment') }}" style="text-decoration: none;"><p class="mb-0">Payment</p></a>
                     </div>
                     <div class="card-content">
                         <div id="subscribe-gain-chart"></div>
@@ -131,7 +131,7 @@ card-img-right">
                             </div>
                         </div>
                         <h2 class="text-bold-700 mt-1 mb-25">{{count($data['banks'])}}</h2>
-                        <p class="mb-0">Bank</p>
+                        <a href="{{ route('admin.bank.showAll') }}" style="text-decoration: none;"><p class="mb-0">Bank</p></a>
                     </div>
                     <div class="card-content">
                         <div id="subscribe-gain-chart"></div>

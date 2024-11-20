@@ -135,15 +135,15 @@ class BikeController extends Controller
 
     public function remove(string $id): RedirectResponse
     {   
-        if (!empty(Item::where('bike_id', $id)->get())) {
+        if (Item::where('bike_id', $id)->exists()) {
             flash('Fail! Cant delete bike, because allready in order.')->error();
             return redirect()->route('admin.bike.showAll');
         }
 
-        Assembly::where('bike_id', $id)->delete();
+        //Assembly::where('bike_id', $id)->delete();
         $bike = Bike::findOrFail($id);
 
-        Storage::disk('public')->delete($bike->img);
+        //Storage::disk('public')->delete($bike->img);
         $bike->delete();
 
         return redirect()->route('admin.bike.showAll');

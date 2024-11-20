@@ -167,7 +167,7 @@
                 cancelButtonColor: '#d33',
                 confirmButtonText: 'Yes!'
             }).then((result) => {
-                if(result) {
+                if(result.value) {
                     $("#delete-form-{{$order->getId()}}").submit();
                 }
             }
@@ -186,7 +186,7 @@
                 cancelButtonColor: '#d33',
                 confirmButtonText: 'Yes!'
             }).then((result) => {
-                if(result) {
+                if(result.value) {
                     $("#close-form-{{$order->getId()}}").submit();
                 }
             }
