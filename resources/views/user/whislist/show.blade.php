@@ -29,7 +29,7 @@
     
     <!-- Shop product grid right sidebar
 ============================================= -->
-    <section id="shopgrid" class="shop shop-grid">
+    <section id="shopgrid" class="shop shop-grid" style="margin-top: -40px;">
         <div class="container">
             <div class="row">
                 <div class="col-xs-12 col-sm-12 col-md-12">
@@ -39,30 +39,14 @@
                 </div>
             </div>
             <div class="row">
-
                 <div class="col-xs-12 col-sm-12 col-md-12">
-                    <div class="row">
-                        <div class="col-xs-12  col-sm-12  col-md-12">
-                            <div class="shop-options">
-                                <!-- .product-options end -->
-                                {{-- <div class="product-view-mode text-right pull-none-xs">
-                                    <span>view as:</span>
-                                    <a class="active" href="#"><i class="fa fa-th-large"></i></a>
-                                    <a href="#"><i class="fa fa-th-list"></i></a>
-                                </div> --}}
-                                <!-- .product-num end -->
-                            </div>
-                            <!-- .shop-options end -->
-                        </div>
-                        <!-- .col-md-12 end -->
-                    </div>
                     <!-- .row end -->
                     <div class="row">
                         @foreach ($viewData["whislist"] as $bike)
                         <!-- Product #1 -->
                         <div class="col-xs-12 col-sm-6 col-md-3 product">
                             <div class="product-img">
-                                <img src="{{ Storage::url($bike->bike->getImage()) }}" alt="Product"/>
+                                <img style="height: 230px;" src="{{ Storage::url($bike->bike->getImage()) }}" alt="Product"/>
                                 <div class="product-hover">
                                     <div class="product-action">
                                         @if($bike->bike->stock >= 1)

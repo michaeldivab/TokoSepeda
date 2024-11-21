@@ -25,6 +25,8 @@
 <link href="{{ asset('templates/assets/css/style.css')}}" rel="stylesheet">
 <link href="{{ asset('templates/assets/css/custom.css')}}" rel="stylesheet">
 
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/1.1.3/sweetalert.min.css" />
+
 <!-- HTML5 shim, for IE6-8 support of HTML5 elements. All other JS at the end of file. -->
 <!--[if lt IE 9]>
       <script src="assets/js/html5shiv.js"></script>
@@ -53,6 +55,10 @@
 <script src="{{ asset('templates/assets/js/jquery-2.2.4.min.js')}}"></script>
 <script src="{{ asset('templates/assets/js/plugins.js')}}"></script>
 <script src="{{ asset('templates/assets/js/functions.js')}}"></script>
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@9"></script>
+    <!-- BEGIN: Page JS-->
+<script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+
 <script>
   $('#flash-overlay-modal').modal();
   $('div.alert').not('.alert-important').delay(20000).fadeOut(20000);

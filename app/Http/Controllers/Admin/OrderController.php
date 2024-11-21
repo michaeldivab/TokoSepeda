@@ -147,6 +147,7 @@ class OrderController extends Controller
         $bikeItems->delete();
         $order->delete();
 
+        flash('Success! Your Order has been Successfully Deleted.')->success();
         return redirect()->back();
     }
 }

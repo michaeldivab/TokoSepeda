@@ -40,7 +40,7 @@
     
     <!-- Shop Cart
 ============================================= -->
-    <section id="shopcart" class="shop shop-cart">
+    <section id="shopcart" class="shop shop-cart" style="margin-top: -40px;">
         <div class="container">
             <div class="row">
                 <div class="col-xs-12 col-sm-12 col-md-12">
@@ -49,7 +49,7 @@
                     <!-- .aret end -->
                 </div>
             </div>
-            <div class="row">
+            <div class="row" style="float: right;">
                 <div id="accordion">
                   <div class="card">
                     <div class="card-header" id="headingOne">
@@ -77,7 +77,7 @@
                   
                 </div>
             </div>
-            <br><br>
+            <br><br><br>
             @if(session('status')=== 'balance_problem')
                 <div class="alert alert-danger mt-2">
                     {{__('messages.cart.balance.error')}}
@@ -121,7 +121,11 @@
                                     @endif
 
                                     <td>{{ date('j F Y', strtotime($order->created_at)) }}</td>
-                                    <td>{{ date('j F Y', strtotime($order->payment_date)) }}</td>
+                                    @if($order->payment_date != NULL)
+                                        <td>{{ date('j F Y', strtotime($order->payment_date)) }}</td>
+                                    @else
+                                        <td style="text-align: center;">-</td>
+                                    @endif
                                     @if($order->payment_image)
                                     <td>
                                         <a href="{{ Storage::url($order->payment_image) }}" target="_blank"><img src="{{ Storage::url($order->payment_image) }}" class="img-thumbnail" alt="bill of payment" style="max-height: 50px;">
@@ -155,7 +159,7 @@
                                                   <i class="fa fa-trash fa-md"></i>
                                                 </a>
 
-                                                <form id="delete-form-{{$order->getId()}}" action="{{ route('admin.order.remove', ['id'=>$order->getId()])}}" method="post">
+                                                <form id="delete-form-{{$order->getId()}}" action="{{ route('user.order.remove', ['id'=>$order->getId()])}}" method="post">
                                                   @csrf
                                                   @method('delete')
                                                 </form>
@@ -181,13 +185,13 @@
         <div id="update-modal-{{$order->getId()}}" class="modal model-sign fade register-modal-lg" tabindex="-1" role="dialog">
             <div class="modal-dialog">
                 <div class="modal-content">
-                    <div class="modal-header">
-                        <h5 class="modal-title" id="exampleModalLabel">Update Payment Bill #{{$order->getId()}}</h5>
-                        <button type="button" class="close text-default" data-dismiss="modal" aria-label="Close">
+                    
+                    <div class="modal-body">
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                           <span aria-hidden="true">&times;</span>
                         </button>
-                     </div>
-                    <div class="modal-body">
+                        <h5 class="modal-title" id="exampleModalLabel" style="text-align: center;">Update Payment Bill #{{$order->getId()}}</h5>
+                        <hr>
                         <div class="register-form">
                             <form class="mb-0" method="POST" enctype="multipart/form-data" action="{{ route('user.order.save.updatePaymentTransfers', ['id'=>$order->getId()])}}">
                                 @csrf
