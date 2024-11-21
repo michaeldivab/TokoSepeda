@@ -155,7 +155,7 @@
                                                   <i class="fa fa-trash fa-md"></i>
                                                 </a>
 
-                                                <form id="delete-form-{{$order->getId()}}" action="{{ route('user.order.remove', ['id'=>$order->getId()])}}" method="post">
+                                                <form id="delete-form-{{$order->getId()}}" action="{{ route('admin.order.remove', ['id'=>$order->getId()])}}" method="post">
                                                   @csrf
                                                   @method('delete')
                                                 </form>
@@ -243,7 +243,7 @@
                 cancelButtonColor: '#d33',
                 confirmButtonText: 'Yes!'
             }).then((result) => {
-                if(result) {
+                if(result.value) {
                     $("#delete-form-{{$order->getId()}}").submit();
                 }
             }

@@ -68,6 +68,7 @@ Route::middleware(['auth.role:admin'])->group(function () {
     Route::delete('admin/order/remove/{id}', 'App\Http\Controllers\Admin\OrderController@remove')->name("admin.order.remove");
     // Route::get('admin/order/update/{id}', 'App\Http\Controllers\Admin\OrderController@update')->name("admin.order.update");
     Route::patch('admin/order/save/update/{id}', 'App\Http\Controllers\Admin\OrderController@saveUpdatePayment')->name("admin.order.save.updatePayment");
+    Route::patch('admin/order/save/update-resi/{id}', 'App\Http\Controllers\Admin\OrderController@saveUpdateResi')->name("admin.order.save.updateResi");
     Route::patch('admin/order/save/removeDelivery/{id}', 'App\Http\Controllers\Admin\OrderController@saveRemoveDelivery')->name("admin.order.save.removeDelivery");
     Route::patch('admin/order/save/closeDelivery/{id}', 'App\Http\Controllers\Admin\OrderController@saveCloseDelivery')->name("admin.order.save.closeDelivery");
 

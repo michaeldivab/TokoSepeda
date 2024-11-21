@@ -18,7 +18,7 @@ class BikeController extends Controller
     public function showAll(Request $request): View
     {   
         $viewData['title'] = __('messages.Inventory');
-        $viewData['bikes'] = Bike::orderBy('created_at', 'desc');
+        $viewData['bikes'] = Bike::orderBy('stock', 'desc');
 
         if (isset($request->search)) {
             $search = $request->search;
@@ -43,7 +43,7 @@ class BikeController extends Controller
             $viewData['idbike'] = 0;
         }
 
-        $viewData['bikes'] = $viewData['bikes']->orderBy('stock', 'desc')->orderBy('ordercount', 'desc')->paginate(16);
+        $viewData['bikes'] = $viewData['bikes']->paginate(16);
 
         $cartBikeData = $request->session()->get('cart_bike_data');
         $viewData['cartCount'] = 0;
@@ -103,7 +103,7 @@ class BikeController extends Controller
     public function clear_search_products(Request $request)
     {   
         $viewData['idbike'] = 0;
-        $viewData['bikes'] = Bike::orderBy('stock', 'desc')->orderBy('ordercount', 'desc')->paginate(16);
+        $viewData['bikes'] = Bike::orderBy('stock', 'desc')->paginate(16);
 
         return view('user.bike.searchProduct',compact('viewData'))->render();
     }

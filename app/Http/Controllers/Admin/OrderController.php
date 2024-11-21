@@ -84,6 +84,17 @@ class OrderController extends Controller
         return redirect()->back();
     }
 
+    public function saveUpdateResi(Request $request, string $id): RedirectResponse
+    {   
+        $order = Order::where('id', $id)->first();
+        $order->payment_notes   = $request->notes;
+        $order->resi            = $request->resi;
+        $order->save();
+
+        flash('Success! Order has Been Updated.')->success();
+        return redirect()->back();
+    }
+
     public function saveRemoveDelivery(Request $request, string $id): RedirectResponse
     {   
         $order = Order::where('id', $id)->first();

@@ -125,7 +125,7 @@
                 </button>
               </div>
               <div class="modal-body">
-                <form method="POST" enctype="multipart/form-data" action="{{ route('admin.order.save.updatePayment', ['id'=>$order->getId()])}}">
+                <form method="POST" enctype="multipart/form-data" action="{{ route('admin.order.save.updateResi', ['id'=>$order->getId()])}}">
                     @csrf
                     @method('patch')
                     <div class="form-group">
