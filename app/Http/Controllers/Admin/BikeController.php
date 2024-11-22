@@ -146,6 +146,7 @@ class BikeController extends Controller
         //Storage::disk('public')->delete($bike->img);
         $bike->delete();
 
+        flash('Success! Bike Deleted Succefully.')->success();
         return redirect()->route('admin.bike.showAll');
     }
 }
