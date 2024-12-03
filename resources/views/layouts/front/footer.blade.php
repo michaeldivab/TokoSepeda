@@ -219,6 +219,5 @@
 		</div>
 		<!-- .container end -->
 	</div>
-	<small>web ini belum lunas pembayaran</small>
 	<!-- .footer-copyright end -->
 </footer>
