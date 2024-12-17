@@ -134,7 +134,7 @@
 				<span class="icon-bar"></span>
 				</button>
 				<a class="logo" href="{{url('/')}}">
-				<img src="https://htmldemo.net/rideo/img/logo.webp" alt="Autoshop">
+				<img src="{{asset('templates/assets/images/logo/Logo Toko Sepeda.png')}}" alt="Logo Toko Sepeda">
 				</a>
 			</div>
 			
